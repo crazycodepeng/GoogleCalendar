@@ -56,6 +56,9 @@ public class GeneralPreferences extends PreferenceFragment implements
         OnSharedPreferenceChangeListener, OnPreferenceChangeListener, OnTimeZoneSetListener {
     // The name of the shared preferences file. This name must be maintained for historical
     // reasons, as it's what PreferenceManager assigned the first time the file was created.
+    /**
+     * 共享首选项文件的名称。 由于历史原因，这个名称必须保留，因为它是PreferenceManager首次创建文件时分配的名称。
+     * */
     static final String SHARED_PREFS_NAME = "com.android.calendar_preferences";
     static final String SHARED_PREFS_NAME_NO_BACKUP = "com.android.calendar_preferences_no_backup";
 

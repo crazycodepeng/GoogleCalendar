@@ -16,8 +16,6 @@
 
 package com.liup.googlecalendar;
 
-import static android.provider.CalendarContract.EXTRA_EVENT_BEGIN_TIME;
-
 import android.accounts.Account;
 import android.app.Activity;
 import android.app.SearchManager;
@@ -71,6 +69,8 @@ import java.util.Set;
 import java.util.TimeZone;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import static android.provider.CalendarContract.EXTRA_EVENT_BEGIN_TIME;
 
 public class Utils {
     private static final boolean DEBUG = false;
@@ -1642,7 +1642,8 @@ public class Utils {
 
     /**
      * Inserts a drawable with today's day into the today's icon in the option menu
-     * @param icon - today's icon from the options menu
+     * 在今天的选项菜单中插入今天的图标
+     * @param icon - today's icon from the options menu 今天的图标
      */
     public static void setTodayIcon(LayerDrawable icon, Context c, String timezone) {
         DayOfMonthDrawable today;
@@ -1705,6 +1706,9 @@ public class Utils {
      * SharedPreferences. If not are found, get the hard coded ones that shipped
      * with the app
      *
+     * 获取用于从SharedPreferences向客人发送电子邮件的快速回复列表。
+     * 如果没有找到，获得硬编码的应用程序随附的
+     *
      * @param context
      * @return a list of quick responses.
      */
@@ -1746,6 +1750,13 @@ public class Utils {
      * This sync is done automatically in the background when the
      * SelectCalendars activity and fragment are started.
      *
+     * 检查服务器是否有更新的日历列表（在后台）。如果在网络上添加了日历（并且已选择并未隐藏），
+     * 则会将其添加到手机上的日历列表中（当此操作完成时）。
+     * 当来自网络的新日历被添加到电话时，该日历的事件也从网络下载。
+     * 当SelectCalendars活动和片段启动时，此同步在后台自动完成。
+     *
+     *
+     *
      * @param account - The account to sync. May be null to sync all accounts.
      */
     public static void startCalendarMetafeedSync(Account account) {
@@ -1760,6 +1771,9 @@ public class Utils {
      * links. If lastDitchGeo is true, then if no links are found in the textview, the entire
      * string will be converted to a single geo link. Any spans that may have previously been
      * in the text will be cleared out.
+     *
+     * 用可点击的链接替换看起来像地址和电话号码的文本段。 如果lastDitchGeo为true，
+     * 则如果在textview中找不到链接，则整个字符串将转换为单个地理链接。 以前在文本中的任何跨度将被清除。
      * <p>
      * This is really just an enhanced version of Linkify.addLinks().
      *
@@ -2058,6 +2072,7 @@ public class Utils {
 
     /**
      * Determines whether a new span at [start,end) will overlap with any existing span.
+     * 确定[开始，结束]处的新跨度是否将与任何现有跨度重叠。
      */
     private static boolean spanWillOverlap(Spannable spanText, URLSpan[] spanList, int start,
             int end) {

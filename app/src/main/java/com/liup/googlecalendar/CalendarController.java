@@ -277,7 +277,7 @@ public class CalendarController {
     /**
      * Creates and/or returns an instance of CalendarController associated with
      * the supplied context. It is best to pass in the current Activity.
-     *
+     *  创建和/或返回与所提供的上下文相关联的CalendarController的实例。 最好是传入当前Activity。
      * @param context The activity if at all possible.
      */
     public static CalendarController getInstance(Context context) {

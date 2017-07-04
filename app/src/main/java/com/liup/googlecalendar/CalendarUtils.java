@@ -45,6 +45,7 @@ public class CalendarUtils {
     /**
      * This class contains methods specific to reading and writing time zone
      * values.
+     * 此类包含特定于读取和写入时区值的方法。
      */
     public static class TimeZoneUtils {
         private static final String[] TIMEZONE_TYPE_ARGS = { CalendarCache.KEY_TIMEZONE_TYPE };

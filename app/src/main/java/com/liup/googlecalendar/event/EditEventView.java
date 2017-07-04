@@ -43,11 +43,13 @@ import android.text.format.DateUtils;
 import android.text.format.Time;
 import android.text.util.Rfc822Tokenizer;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityManager;
+import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
@@ -139,7 +141,7 @@ public class EditEventView implements OnClickListener, DialogInterface.OnCancelL
     RadioGroup mResponseRadioGroup;
     TextView mTitleTextView;
     AutoCompleteTextView mLocationTextView;
-//    EventLocationAdapter mLocationAdapter;
+    EventLocationAdapter mLocationAdapter;
     TextView mDescriptionTextView;
     TextView mWhenView;
     TextView mTimezoneTextView;
@@ -816,19 +818,19 @@ public class EditEventView implements OnClickListener, DialogInterface.OnCancelL
 
         mTitleTextView.setTag(mTitleTextView.getBackground());
         mLocationTextView.setTag(mLocationTextView.getBackground());
-//        mLocationAdapter = new EventLocationAdapter(activity);
-//        mLocationTextView.setAdapter(mLocationAdapter);
-//        mLocationTextView.setOnEditorActionListener(new OnEditorActionListener() {
-//            @Override
-//            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-//                if (actionId == EditorInfo.IME_ACTION_DONE) {
-//                    // Dismiss the suggestions dropdown.  Return false so the other
-//                    // side effects still occur (soft keyboard going away, etc.).
-//                    mLocationTextView.dismissDropDown();
-//                }
-//                return false;
-//            }
-//        });
+        mLocationAdapter = new EventLocationAdapter(activity);
+        mLocationTextView.setAdapter(mLocationAdapter);
+        mLocationTextView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    // Dismiss the suggestions dropdown.  Return false so the other
+                    // side effects still occur (soft keyboard going away, etc.).
+                    mLocationTextView.dismissDropDown();
+                }
+                return false;
+            }
+        });
 
         mAvailabilityExplicitlySet = false;
         mAllDayChangingAvailability = false;

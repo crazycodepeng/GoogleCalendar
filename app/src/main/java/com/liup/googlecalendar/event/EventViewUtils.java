@@ -42,6 +42,10 @@ public class EventViewUtils {
     // if the given minutes is 63, then this returns the string "63 minutes".
     // As another example, if the given minutes is 120, then this returns
     // "2 hours".
+    /**
+     * 构造给定任意分钟数的标签。 例如，如果给定的分钟是63，则返回字符串“63分钟”。
+     * 作为另一示例，如果给定分钟是120，则返回“2小时”。
+     * */
     public static String constructReminderLabel(Context context, int minutes, boolean abbrev) {
         Resources resources = context.getResources();
         int value, resId;
@@ -67,7 +71,7 @@ public class EventViewUtils {
 
     /**
      * Finds the index of the given "minutes" in the "values" list.
-     *
+     *  查找“值”列表中给定“分钟”的索引。
      * @param values the list of minutes corresponding to the spinner choices
      * @param minutes the minutes to search for in the values list
      * @return the index of "minutes" in the "values" list
@@ -86,6 +90,9 @@ public class EventViewUtils {
      * Finds the index of the given method in the "methods" list.  If the method isn't present
      * (perhaps because we don't think it's allowed for this calendar), we return zero (the
      * first item in the list).
+     *
+     * 在“方法”列表中查找给定方法的索引。
+     * 如果方法不存在（也许是因为我们认为它不允许这个日历），我们返回零（列表中的第一项）。
      * <p>
      * With the current definitions, this effectively converts DEFAULT and unsupported method
      * types to ALERT.

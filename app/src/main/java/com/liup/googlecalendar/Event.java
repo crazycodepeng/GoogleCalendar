@@ -48,10 +48,17 @@ public class Event implements Cloneable {
      * 1) events with an earlier start (begin for normal events, startday for allday)
      * 2) events with a later end (end for normal events, endday for allday)
      * 3) the title (unnecessary, but nice)
-     *
+     * <p>
      * The start and end day is sorted first so that all day events are
      * sorted correctly with respect to events that are >24 hours (and
      * therefore show up in the allday area).
+     * <p>
+     * 排序顺序为：
+     * 1）具有较早开始的事件（开始用于正常事件，开始日用于allday）
+     * 2）具有较晚结束的事件（正常事件结束，allday结束）
+     * 3）标题（不必要，但不错）
+     * ：
+     * 开始和结束日期先排序，以便所有天事件相对于> 24小时的事件正确排序（因此显示在allday区域）。
      */
     private static final String SORT_EVENTS_BY =
             "begin ASC, end DESC, title ASC";
@@ -63,7 +70,7 @@ public class Event implements Cloneable {
     private static final String ALLDAY_WHERE = DISPLAY_AS_ALLDAY + "=1";
 
     // The projection to use when querying instances to build a list of events
-    public static final String[] EVENT_PROJECTION = new String[] {
+    public static final String[] EVENT_PROJECTION = new String[]{
             Instances.TITLE,                 // 0
             Instances.EVENT_LOCATION,        // 1
             Instances.ALL_DAY,               // 2
@@ -140,14 +147,15 @@ public class Event implements Cloneable {
 
     public int selfAttendeeStatus;
 
-    // The coordinates of the event rectangle drawn on the screen.
+    // The coordinates of the event rectangle drawn on the screen. 在屏幕上绘制的事件矩形的坐标。
     public float left;
     public float right;
     public float top;
     public float bottom;
 
     // These 4 fields are used for navigating among events within the selected
-    // hour in the Day and Week view.
+    // 这4个字段用于在所选择的事件之间导航
+    // hour in the Day and Week view. 小时的天和周视图。
     public Event nextRight;
     public Event nextLeft;
     public Event nextUp;
@@ -219,9 +227,10 @@ public class Event implements Cloneable {
 
     /**
      * Loads <i>days</i> days worth of instances starting at <i>startDay</i>.
+     * 从startDay开始加载days天的实例
      */
     public static void loadEvents(Context context, ArrayList<Event> events, int startDay, int days,
-            int requestId, AtomicInteger sequenceNumber) {
+                                  int requestId, AtomicInteger sequenceNumber) {
 
         if (PROFILE) {
             Debug.startMethodTracing("loadEvents");
@@ -243,8 +252,14 @@ public class Event implements Cloneable {
             // the left side.  If the start and end times of two events are
             // the same then we sort alphabetically on the title.  This isn't
             // required for correctness, it just adds a nice touch.
-
-            // Respect the preference to show/hide declined events
+            /**
+             * 我们使用byDay实例查询来获取我们感兴趣的日子的所有事件的列表。
+             * 排序顺序是：首先发生具有较早开始时间的事件，如果开始时间相同，则具有较晚结束的事件 时间首先出现。
+             * 首先对后面的结束时间排序，以便日历视图中的长矩形出现在左侧。
+             * 如果两个事件的开始和结束时间相同，那么我们按字母顺序对标题进行排序。
+             * 这不是正确的要求，它只是增加了一个很好的感觉。
+             * */
+            // Respect the preference to show/hide declined events 尊重显示/隐藏已拒绝的活动的偏好设置
             SharedPreferences prefs = GeneralPreferences.getSharedPreferences(context);
             boolean hideDeclined = prefs.getBoolean(GeneralPreferences.KEY_HIDE_DECLINED,
                     false);
@@ -292,20 +307,23 @@ public class Event implements Cloneable {
      * recurring events to fill this time range if they are not already
      * expanded and will slow down for larger time ranges with many
      * recurring events.
+     * <p>
+     * 执行查询以返回与给定范围匹配的所有可见实例。 这是一个阻塞函数，不应该在UI线程上完成。
+     * 这将导致循环事件的扩展，如果它们尚未扩展，则填充该时间范围，并且对于具有许多循环事件的较大时间范围将减慢。
      *
-     * @param cr The ContentResolver to use for the query
-     * @param projection The columns to return
-     * @param begin The start of the time range to query in UTC millis since
-     *            epoch
-     * @param end The end of the time range to query in UTC millis since
-     *            epoch
-     * @param selection Filter on the query as an SQL WHERE statement
-     * @param selectionArgs Args to replace any '?'s in the selection
-     * @param orderBy How to order the rows as an SQL ORDER BY statement
-     * @return A Cursor of instances matching the selection
+     * @param cr            The ContentResolver to use for the query 用于查询的ContentResolver
+     * @param projection    The columns to return 要返回的列
+     * @param startDay      The start of the time range to query in UTC millis since
+     *                      epoch 从UTC开始以UTC为单位查询的时间范围
+     * @param endDay        The end of the time range to query in UTC millis since
+     *                      epoch 从UTC开始以UTC为单位查询的时间范围的结束
+     * @param selection     Filter on the query as an SQL WHERE statement 以SQL WHERE语句过滤查询
+     * @param selectionArgs Args to replace any '?'s in the selection Arg替换选择中的任何'？'
+     * @param orderBy       How to order the rows as an SQL ORDER BY statement 如何将行排序为SQL ORDER BY语句
+     * @return A Cursor of instances matching the selection 匹配选择的实例的游标
      */
     private static final Cursor instancesQuery(ContentResolver cr, String[] projection,
-            int startDay, int endDay, String selection, String[] selectionArgs, String orderBy) {
+                                               int startDay, int endDay, String selection, String[] selectionArgs, String orderBy) {
         String WHERE_CALENDARS_SELECTED = Calendars.VISIBLE + "=?";
         String[] WHERE_CALENDARS_ARGS = {"1"};
         String DEFAULT_SORT_ORDER = "begin ASC";
@@ -331,9 +349,9 @@ public class Event implements Cloneable {
 
     /**
      * Adds all the events from the cursors to the events list.
-     *
-     * @param events The list of events
-     * @param cEvents Events to add to the list
+     *  将光标中的所有事件添加到事件列表。
+     * @param events   The list of events
+     * @param cEvents  Events to add to the list
      * @param context
      * @param startDay
      * @param endDay
@@ -428,12 +446,21 @@ public class Event implements Cloneable {
      * rectangle depend on the maximum number of rectangles that occur at
      * the same time.
      *
-     * @param eventsList the list of events, sorted into increasing time order
+     * 计算每个事件的位置。 每个事件显示为非重叠矩形。 对于正常事件，这些矩形显示在周视图和日视图中的单独列中。
+     * 对于全天事件，这些矩形显示在顶部的单独行中。
+     * 在这两种情况下，每个事件都分配有两个数字：N和Max，指定此事件是组中显示的最大事件数的第N个事件。
+     * 每个矩形的宽度和位置取决于同时出现的矩形的最大数量。
+     *
+     *
+     * @param eventsList            the list of events, sorted into increasing time order
+     *                              事件列表，按增加的时间顺序排序
      * @param minimumDurationMillis minimum duration acceptable as cell height of each event
-     * rectangle in millisecond. Should be 0 when it is not determined.
+     *                              rectangle in millisecond. Should be 0 when it is not determined.
+     *                              最小持续时间可接受为每个事件矩形的单元格高度，单位为毫秒。 当没有确定时应为0。
      */
-    /* package */ static void computePositions(ArrayList<Event> eventsList,
-            long minimumDurationMillis) {
+    /* package */
+    static void computePositions(ArrayList<Event> eventsList,
+                                 long minimumDurationMillis) {
         if (eventsList == null) {
             return;
         }
@@ -444,7 +471,7 @@ public class Event implements Cloneable {
     }
 
     private static void doComputePositions(ArrayList<Event> eventsList,
-            long minimumDurationMillis, boolean doAlldayEvents) {
+                                           long minimumDurationMillis, boolean doAlldayEvents) {
         final ArrayList<Event> activeList = new ArrayList<Event>();
         final ArrayList<Event> groupList = new ArrayList<Event>();
 
@@ -459,7 +486,7 @@ public class Event implements Cloneable {
             if (event.drawAsAllday() != doAlldayEvents)
                 continue;
 
-           if (!doAlldayEvents) {
+            if (!doAlldayEvents) {
                 colMask = removeNonAlldayActiveEvents(
                         event, activeList.iterator(), minimumDurationMillis, colMask);
             } else {
@@ -552,7 +579,7 @@ public class Event implements Cloneable {
     }
 
     public final boolean intersects(int julianDay, int startMinute,
-            int endMinute) {
+                                    int endMinute) {
         if (endDay < julianDay) {
             return false;
         }
@@ -585,6 +612,8 @@ public class Event implements Cloneable {
      * Returns the event title and location separated by a comma.  If the
      * location is already part of the title (at the end of the title), then
      * just the title is returned.
+     * <p>
+     * 返回由逗号分隔的事件标题和位置。 如果位置已经是标题的一部分（在标题的结尾），则只返回标题。
      *
      * @return the event title and location as a String
      */
