@@ -6,19 +6,17 @@ Goolge  日历源码
 
 其中 下边几个包是后导入的缺失文件   
 
-|calendarcommon2
+>calendarcommon2
 
-|colorpicker
+>colorpicker
 
-|common
+>common
 
-|datetimepicker
+>datetimepicker
 
-|ex.chips
+>ex.chips
 
-|timezonepicker
+>timezonepicker
 
-未完善部分：
-EventLocationAdapter部分没有完善，缺失的文件也未导入，但不影响运行
 
-如有问题，可及时联系
+
