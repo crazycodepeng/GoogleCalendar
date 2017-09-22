@@ -1,6 +1,6 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_name">GoogleCalendar</string>
-    <string name="app_label">Calendar</string>
+    <string name="app_name">GoogleCalendar可编译版</string>
+    <string name="app_label">日历</string>
     <skip/>
     <!-- This is the label for the title or name of an event -->
     <string name="what_label">What</string>
@@ -13,9 +13,9 @@
     <!-- This is the label for the Guests/Attendees of an event -->
     <string name="attendees_label">Guests</string>
     <!-- Text to show when an event starts on the current day -->
-    <string name="today">Today</string>
+    <string name="today">今天</string>
     <!-- Text to show when an event starts on the next day -->
-    <string name="tomorrow">Tomorrow</string>
+    <string name="tomorrow">明天</string>
     <!-- Text for an event starting on the current day with a start and end time.
          For ex, "Today at 5:00pm-6:00pm" [CHAR LIMIT=NONE] -->
     <string name="today_at_time_fmt">"Today at <xliff:g id="time_interval">%s</xliff:g>"</string>
@@ -29,17 +29,17 @@
     <!-- Some events repeat daily, weekly, monthly, or yearly.  This is the label
          for all the choices about how often an event repeats (including the choice
          of not repeating). -->
-    <string name="repeats_label">Repetition</string>
+    <string name="repeats_label">重复</string>
     <!-- Title of event when no explicit title is specified by the user -->
     <string name="no_title_label">(No title)</string>
 
     <!-- Reminder format strings -->
     <plurals name="Nminutes">
         <!-- This is the label for a 1-minute reminder. -->
-        <item quantity="one">1 minute</item>
+        <item quantity="one">1 分钟</item>
         <!-- This is the label for 2 or more minutes. The actual number of
              minutes is a parameter. -->
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> minutes</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> 分钟</item>
     </plurals>
     <!-- We use the abbreviation "mins" instead of "minutes" to keep the string short.
          This is the number of minutes displayed for a calendar reminder.  For example,
@@ -47,30 +47,30 @@
          should use the shortest acceptable abbreviation to save space. -->
     <plurals name="Nmins">
         <!-- This is the label for a 1-minute reminder. -->
-        <item quantity="one">1 min</item>
+        <item quantity="one">1 分钟</item>
         <!-- This is the label for 2 or more minutes. The actual number of
              minutes is a parameter. -->
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> mins</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> 分钟</item>
     </plurals>
     <!-- This is the number of hours displayed for a calendar reminder.  For example,
          a reminder of 1 hour would be displayed as '1 hour'.  The translation
          should use the shortest acceptable abbreviation of 'hour' to save space. -->
     <plurals name="Nhours">
         <!-- This is the label for a 1-hour reminder. -->
-        <item quantity="one">1 hour</item>
+        <item quantity="one">1 小时</item>
         <!-- This is the label for a reminder of 2 or more hours. The actual number of
              hours is a parameter. -->
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> hours</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> 小时</item>
     </plurals>
     <!-- This is the number of days displayed for a calendar reminder.  For example,
          a reminder of 2 days would be displayed as '2 days'.  The translation
          should use the shortest acceptable abbreviation of 'day' to save space. -->
     <plurals name="Ndays">
         <!-- This is the label for a reminder of 1 day. -->
-        <item quantity="one">1 day</item>
+        <item quantity="one">1 天</item>
         <!-- This is the label for a reminder of 2 or more days. The actual number of
              days is a parameter. -->
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> days</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> 天</item>
     </plurals>
     <!-- This is for displaying the week of the year near the date. Eg. "January, 2011 Week 1" -->
     <plurals name="weekN">
@@ -82,60 +82,60 @@
     <skip/>
     <!-- This is a label on a context menu item. Pressing this menu item to initiate
         syncing of your Calendar data with the server. [CHAR LIMIT=11] -->
-    <string name="calendar_refresh"> "Refresh"</string>
+    <string name="calendar_refresh"> "刷新"</string>
     <!-- This is a label on a context menu item. Pressing this menu item displays the
          Agenda view. -->
 
     <!-- This is a label on a context menu item. Pressing this menu item displays the
          Day view. -->
-    <string name="show_day_view">"Show day"</string>
+    <string name="show_day_view">"日视图"</string>
     <!-- This is a label on a menu item. Pressing this menu item displays the
          Agenda view. -->
-    <string name="agenda_view">"Agenda"</string>
+    <string name="agenda_view">"日程视图"</string>
     <!-- This is a label on a menu item. Pressing this menu item displays the
          Day view. -->
-    <string name="day_view">"Day"</string>
+    <string name="day_view">"天"</string>
     <!-- This is a label on a menu item. Pressing this menu item displays the
          Week view. -->
-    <string name="week_view">"Week"</string>
+    <string name="week_view">"周"</string>
     <!-- This is a label on a menu item. Pressing this menu item displays the
          Month view. -->
-    <string name="month_view">"Month"</string>
+    <string name="month_view">"月"</string>
     <!-- This is a label on a menu item. Pressing this menu item displays the
          details of an event. -->
-    <string name="event_view">"View event"</string>
+    <string name="event_view">"查看活动"</string>
     <!-- This is a label on a menu item. Pressing this menu item allows the
          user to create a new event. -->
-    <string name="event_create">"New event"</string>
+    <string name="event_create">"新事件"</string>
     <!-- This is a label on a menu item in a popup window. Pressing this menu
          item allows the user to edit or change an existing event. -->
-    <string name="event_edit">"Edit event"</string>
+    <string name="event_edit">"编辑事件"</string>
     <!-- This is a label on a menu item in a popup window. Pressing this menu
          item allows the user to delete an existing event. -->
-    <string name="event_delete">"Delete event"</string>
+    <string name="event_delete">"删除事件"</string>
     <!-- This is a label on a menu item. Pressing this menu
          item takes the user to the current day (today) in whatever view
          (Day view, Week view, Agenda view, Month view) they are currently in. -->
-    <string name="goto_today">"Today"</string>
+    <string name="goto_today">"今天"</string>
     <!-- This is a label on a menu item. Pressing this menu item allows the
          user to see the list of calendars that he is viewing and to then add
          or remove selected calendars. -->
 
     <!-- This is a label on a menu item. Pressing this menu item allows the
          user to view and edit his Settings (or Preferences) -->
-    <string name="menu_preferences">"Settings"</string>
+    <string name="menu_preferences">"设置"</string>
     <!-- This is a label on a menu item. Pressing this menu item allows the
          user to select the calendars to display [CHAR LIMIT=20] -->
-    <string name="menu_select_visible_calendars">"Calendars to display"</string>
+    <string name="menu_select_visible_calendars">"日历显示"</string>
     <!-- This is a label on a menu item. Pressing this menu item allows the
          user to select the calendars to display [CHAR LIMIT=20] -->
-    <string name="search">"Search"</string>
+    <string name="search">"搜索"</string>
     <!-- This is a label on a menu item. Pressing this menu item hides
          the navigation controls on the right side. [CHAR LIMIT=20] -->
-    <string name="hide_controls">"Hide controls"</string>
+    <string name="hide_controls">"隐藏控件"</string>
     <!-- This is a label on a menu item. Pressing this menu item shows the
          navigation controls on the right side. [CHAR LIMIT=20] -->
-    <string name="show_controls">"Show controls"</string>
+    <string name="show_controls">"显示控件"</string>
 
     <!-- Month view -->
     <skip/>
@@ -143,7 +143,7 @@
     <!-- Select Visible Calendars activity -->
     <skip/>
     <!-- Title of "My calendars" screen -->
-    <string name="select_visible_calendars_title">"Calendars to display"</string>
+    <string name="select_visible_calendars_title">"日历显示"</string>
     <!-- Synced and visible status message -->
 
     <!-- Synced but not visible status message -->
@@ -152,10 +152,10 @@
 
     <!-- Synced status message displayed when the given calendar is stored/synced on the device
         [CHAR LIMIT=60] -->
-    <string name="synced"> synced</string>
+    <string name="synced"> 已同步</string>
     <!-- Not synced status message displayed when the given calendar is not stored/synced on the
         device [CHAR LIMIT=60] -->
-    <string name="not_synced"> not synced</string>
+    <string name="not_synced"> 未同步</string>
     <!-- Message displayed to user when an account with Calendars is not being auto-synced
         [CHAR LIMIT=120]-->
     <string name="acct_not_synced">This account isn\'t being synced so your calendars may
@@ -165,28 +165,28 @@
 
     <!-- Select Synced Calendars activity -->
     <!-- Select the set of calendars to sync [CHAR LIMIT=60] -->
-    <string name="select_synced_calendars_title">Calendars to sync</string>
+    <string name="select_synced_calendars_title">要同步的日历</string>
     <!-- Select the set of calendars to sync [CHAR LIMIT=60] -->
-    <string name="select_synced_calendars_button">Calendars to sync</string>
+    <string name="select_synced_calendars_button">要同步的日历</string>
 
     <!-- Event edit activity -->
     <skip/>
     <!-- The title of the screen where the user edits an event [CHAR LIMIT=17] -->
 
     <!-- Default value of What field (as a hint to the user) [CHAR LIMIT=15] -->
-    <string name="hint_what">"Event name"</string>
+    <string name="hint_what">"事件名称"</string>
     <!-- Default value of Where field (as a hint to the user)[CHAR LIMIT=15] -->
-    <string name="hint_where">"Location"</string>
+    <string name="hint_where">"地址"</string>
     <!-- Default value of Description field (as a hint to the user) [CHAR LIMIT=15]-->
-    <string name="hint_description">"Description"</string>
+    <string name="hint_description">"描述"</string>
     <!-- Default value of Attendees/Guests field (as a hint to the user) [CHAR LIMIT=10] -->
     <string name="hint_attendees">"Guests"</string>
     <!-- Toast message displayed when a new event is created -->
-    <string name="creating_event">"Event created."</string>
+    <string name="creating_event">"创建事件"</string>
     <!-- Toast message displayed when an existing event is saved after being modified -->
-    <string name="saving_event">"Event saved."</string>
+    <string name="saving_event">"保存事件"</string>
     <!-- Toast message displayed when a new event was not saved because it was empty [CHAR LIMIT=30] -->
-    <string name="empty_event">"Empty event not created."</string>
+    <string name="empty_event">"空事件"</string>
     <!-- Toast message displayed when a new event with guests is created -->
     <string name="creating_event_with_guest">"Invitations will be sent."</string>
     <!-- Toast message displayed when an existing event with guests is saved after being modified -->
@@ -213,19 +213,19 @@
     <!-- Create event dialog -->
     <skip/>
     <!-- Create event dialog save button [CHAR LIMIT=10] -->
-    <string name="create_event_dialog_save">Save</string>
+    <string name="create_event_dialog_save">保存</string>
 
     <!-- The alert toast is not actually being displayed for some reason. -->
     <skip/>
     <!-- the title of the alert/notification activity -->
-    <string name="alert_title">Calendar notifications</string>
+    <string name="alert_title">日历通知</string>
     <!-- Notification window messages: -->
     <skip/>
 
     <!-- Event info/edit screen labels:-->
     <skip/>
     <!-- This is the title of the screen used to view the details of an event -->
-    <string name="event_info_title">View event</string>
+    <string name="event_info_title">查看事件</string>
     <!-- This is the title of the screen used to view the details of an invitation
          to a meeting or event -->
     <string name="event_info_title_invite">Meeting invitation</string>
@@ -241,29 +241,29 @@
          label before the 'start date'. -->
     <string name="edit_event_from_label">From</string>
     <!-- Check box label that specifies if this is an all-day event -->
-    <string name="edit_event_all_day_label">All day</string>
+    <string name="edit_event_all_day_label">整天</string>
     <!-- Label for choosing one of the calendars -->
-    <string name="edit_event_calendar_label">Calendar</string>
+    <string name="edit_event_calendar_label">日历</string>
     <!-- Menu item to show all choices [CHAR LIMIT=22]-->
-    <string name="edit_event_show_all">Show all</string>
+    <string name="edit_event_show_all">显示所有</string>
     <!-- Label for the event description -->
-    <string name="description_label">Description</string>
+    <string name="description_label">描述</string>
     <!-- Label for the 'Presence' of an event, which can be either 'busy' (the default)
          or 'available'  [CHAR LIMIT=15] -->
     <string name="presence_label">Show me as</string>
     <!-- Label for the 'Privacy' of an event, which can be either 'private'
          or 'public' [CHAR LIMIT=15] -->
-    <string name="privacy_label">Privacy</string>
+    <string name="privacy_label">隐私</string>
     <!-- Label for the list of reminders for an event [CHAR LIMIT=20] -->
-    <string name="reminders_label">Add reminder</string>
+    <string name="reminders_label">添加提醒</string>
     <!-- Title of alert shown if the user tries to create an event and has no calendars -->
-    <string name="no_syncable_calendars">No calendars</string>
+    <string name="no_syncable_calendars">没有日历</string>
     <!-- Body of alert shown if the user tries to create an event and has no calendars. Users can start adding an account here. [CHAR LIMIT=NONE] -->
-    <string name="no_calendars_found">Before you can add an event, you must add at least one Calendar account to your device and make a calendar visible. Touch Add Account to add an account (if you just added an account, wait for it to finish syncing and try again). Or touch Cancel and make sure at least one calendar is visible.</string>
+    <string name="no_calendars_found">在添加活动之前，您必须至少在设备上添加一个日历帐户，来显示日历。 点击添加帐户来添加一个帐户（如果您刚刚添加了一个帐户，请等待它完成同步，然后重试）。 或点击取消，并确保至少有一个日历是可见的。</string>
     <!-- Body of dialog prompting the user to create an account.[CHAR LIMIT=NONE] -->
     <string name="create_an_account_desc">"Calendar works better with a Google Account.\n\n\u2022 Access it from any web browser\n\u2022 Back up your events securely"</string>
     <!-- Title of a button shown when there is no account available and the system prompt a user to add one. [CHAR LIMIT=none] -->
-    <string name="add_account">Add account</string>
+    <string name="add_account">新增账户</string>
 
     <!-- View Event -->
     <skip/>
@@ -274,16 +274,16 @@
     <!-- Label for the local timezone -->
 
     <!-- Label for showing event color picker -->
-    <string name="choose_event_color_label">Choose event color</string>
+    <string name="choose_event_color_label">选择事件颜色r</string>
     <!-- Title for event color picker dialog -->
-    <string name="event_color_picker_dialog_title">Event Color</string>
+    <string name="event_color_picker_dialog_title">事件颜色</string>
     <!-- Label for button which sets event color to default calendar color -->
-    <string name="event_color_set_to_default">Set to default calendar color</string>
+    <string name="event_color_set_to_default">设置为默认日历颜色</string>
 
     <!-- Title for calendar color picker dialog -->
-    <string name="calendar_color_picker_dialog_title">Calendar Color</string>
+    <string name="calendar_color_picker_dialog_title">日历颜色</string>
     <!-- Description for calendar color squares, which bring up the color picker. -->
-    <string name="calendar_square_color_picker_description">Color picker</string>
+    <string name="calendar_square_color_picker_description">选色器</string>
 
     <!-- Label for whether the user is attending this event. This is shown when
          a user is invited to a meeting or event.  The possible answers are
@@ -304,7 +304,7 @@
     <!-- The is shown in the email subject as the prefix appended to the event title -->
     <string translatable="false" name="email_subject_prefix">Re:\u0020</string>
     <!-- Toast message displayed when the event id was not found LIMIT=30] -->
-    <string name="event_not_found">"Event not found."</string>
+    <string name="event_not_found">"未找到事件"</string>
 
     <!-- Notification label for getting a map of the location. -->
     <string name="map_label">Map</string>
