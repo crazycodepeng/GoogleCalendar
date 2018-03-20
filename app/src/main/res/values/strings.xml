@@ -3,15 +3,15 @@
     <string name="app_label">日历</string>
     <skip/>
     <!-- This is the label for the title or name of an event -->
-    <string name="what_label">What</string>
+    <string name="what_label">标题</string>
     <!-- This is the label for the location of an event -->
-    <string name="where_label">Where</string>
+    <string name="where_label">地址</string>
     <!-- This is the label for the time of an event [CHAR LIMIT=30] -->
-    <string name="when_label">When</string>
+    <string name="when_label">时间</string>
     <!-- This is the label for the timezone of an event [CHAR LIMIT=30] -->
-    <string name="timezone_label">Time zone</string>
+    <string name="timezone_label">时区</string>
     <!-- This is the label for the Guests/Attendees of an event -->
-    <string name="attendees_label">Guests</string>
+    <string name="attendees_label">参与者</string>
     <!-- Text to show when an event starts on the current day -->
     <string name="today">今天</string>
     <!-- Text to show when an event starts on the next day -->
@@ -31,7 +31,7 @@
          of not repeating). -->
     <string name="repeats_label">重复</string>
     <!-- Title of event when no explicit title is specified by the user -->
-    <string name="no_title_label">(No title)</string>
+    <string name="no_title_label">(无标题)</string>
 
     <!-- Reminder format strings -->
     <plurals name="Nminutes">
@@ -188,19 +188,19 @@
     <!-- Toast message displayed when a new event was not saved because it was empty [CHAR LIMIT=30] -->
     <string name="empty_event">"空事件"</string>
     <!-- Toast message displayed when a new event with guests is created -->
-    <string name="creating_event_with_guest">"Invitations will be sent."</string>
+    <string name="creating_event_with_guest">"邀请将被发送."</string>
     <!-- Toast message displayed when an existing event with guests is saved after being modified -->
-    <string name="saving_event_with_guest">"Updates will be sent."</string>
+    <string name="saving_event_with_guest">"更新将被发送."</string>
 
     <!-- Toast message displayed responding to an event from an email as accepted
      [CHAR LIMIT=50] -->
-    <string name="rsvp_accepted">"Responded yes."</string>
+    <string name="rsvp_accepted">"回复 是."</string>
     <!-- Toast message displayed responding to an event from an email as tentative
      [CHAR LIMIT=50] -->
-    <string name="rsvp_tentative">"Responded maybe."</string>
+    <string name="rsvp_tentative">"回复 也许."</string>
     <!-- Toast message displayed responding to an event from an email as declined
      [CHAR LIMIT=50] -->
-    <string name="rsvp_declined">"Responded no."</string>
+    <string name="rsvp_declined">"回复 不."</string>
 
 
     <!-- Title of message displayed to indicate available calendars are being loaded when creating
@@ -228,7 +228,7 @@
     <string name="event_info_title">查看事件</string>
     <!-- This is the title of the screen used to view the details of an invitation
          to a meeting or event -->
-    <string name="event_info_title_invite">Meeting invitation</string>
+    <string name="event_info_title_invite">会议邀请</string>
 
     <!-- EditEventActivity specific strings: -->
     <skip/>
@@ -250,7 +250,7 @@
     <string name="description_label">描述</string>
     <!-- Label for the 'Presence' of an event, which can be either 'busy' (the default)
          or 'available'  [CHAR LIMIT=15] -->
-    <string name="presence_label">Show me as</string>
+    <string name="presence_label">让我看看</string>
     <!-- Label for the 'Privacy' of an event, which can be either 'private'
          or 'public' [CHAR LIMIT=15] -->
     <string name="privacy_label">隐私</string>
@@ -268,9 +268,9 @@
     <!-- View Event -->
     <skip/>
     <!-- Label for which calendar an event is part of -->
-    <string name="view_event_calendar_label">Calendar:</string>
+    <string name="view_event_calendar_label">日历:</string>
     <!-- Label for the event organizer -->
-    <string name="view_event_organizer_label">Organizer:</string>
+    <string name="view_event_organizer_label">组织者:</string>
     <!-- Label for the local timezone -->
 
     <!-- Label for showing event color picker -->
@@ -288,17 +288,17 @@
     <!-- Label for whether the user is attending this event. This is shown when
          a user is invited to a meeting or event.  The possible answers are
          'yes', 'no', and 'maybe' (and, initially, 'no response'). -->
-    <string name="view_event_response_label">Attending?</string>
+    <string name="view_event_response_label">参加?</string>
     <!-- Response for whether attending an event - accepted [CHAR LIMIT=10]-->
-    <string name="response_yes">Yes</string>
+    <string name="response_yes">是</string>
     <!-- Response for whether attending an event - tentative [CHAR LIMIT=10]-->
-    <string name="response_maybe">Maybe</string>
+    <string name="response_maybe">也许</string>
     <!-- Response for whether attending an event - declined [CHAR LIMIT=10]-->
-    <string name="response_no">No</string>
+    <string name="response_no">不</string>
     <!-- Label for emailing attendees -->
-    <string name="email_guests_label">Email guests</string>
+    <string name="email_guests_label">Email guests(宾客)</string>
     <!-- Label for emailing the organizer (when there are no attendees) -->
-    <string name="email_organizer_label">Email organizer</string>
+    <string name="email_organizer_label">Email organizer(组织者)</string>
     <!-- This is shown in the popup picker when emailing attendees -->
     <string name="email_picker_label">Email with</string>
     <!-- The is shown in the email subject as the prefix appended to the event title -->
@@ -307,32 +307,32 @@
     <string name="event_not_found">"未找到事件"</string>
 
     <!-- Notification label for getting a map of the location. -->
-    <string name="map_label">Map</string>
+    <string name="map_label">地图</string>
     <!-- Notification label for calling a phone number in the location. -->
-    <string name="call_label">Call</string>
+    <string name="call_label">电话</string>
 
     <!-- Title of the quick response item in Settings [CHAR LIMIT=18]-->
-    <string name="quick_response_settings">Quick responses</string>
+    <string name="quick_response_settings">快速回复</string>
     <!-- Summary of the quick response item in Settings [CHAR LIMIT=80]-->
     <string name="quick_response_settings_summary">Edit default responses when emailing guests</string>
     <!-- Title of the quick response screen in Settings->Quick Response [CHAR LIMIT=27]-->
-    <string name="quick_response_settings_title">Edit quick responses</string>
+    <string name="quick_response_settings_title">编辑快速回复</string>
     <!-- Title of the quick response item in Settings [CHAR LIMIT=18]-->
     <string name="quick_response_settings_edit_title">Quick response</string>
 
     <!-- Title of the dialog prompting the user choose a response when emailing guests  [CHAR LIMIT=none]-->
-    <string name="quick_response_dialog_title">Choose quick response</string>
+    <string name="quick_response_dialog_title">选择快速回复</string>
     <!-- Error to user when an email program can't be found[CHAR LIMIT=none]-->
-    <string name="quick_response_email_failed">Failed to find an email program</string>
+    <string name="quick_response_email_failed">无法找到电子邮件程序</string>
     <!-- The is shown in the email subject as the prefix appended to the event title [CHAR LIMIT=none]-->
     <string-array name="quick_response_defaults">
-        <item>Running just a couple of minutes late.</item>
-        <item>Be there in about 10 minutes.</item>
-        <item>Go ahead and start without me.</item>
-        <item>Sorry, I can\'t make it. We\'ll have to reschedule.</item>
+        <item>迟到几分钟，马上就到.</item>
+        <item>在大约10分钟内到达.</item>
+        <item>你们先开始，我稍后就到.</item>
+        <item>对不起, 我不能去了. 我们必须重新安排时间.</item>
     </string-array>
     <!-- Option to create a custom response instead of using defaults [CHAR LIMIT=none] -->
-    <string name="quick_response_custom_msg">Write your own\u2026</string>
+    <string name="quick_response_custom_msg">写你自己的\u2026</string>
 
     <!-- Event Info strings-->
     <!-- Time Zone Label [CHAR LIMIT=12]-->
@@ -340,20 +340,21 @@
     <!-- Repetition Label [CHAR LIMIT=12]-->
 
     <!-- Organizer Label [CHAR LIMIT=12]-->
-    <string name="event_info_organizer">Organizer:</string>
+    <string name="event_info_organizer">组织者:</string>
     <!-- Reminders label [CHAR LIMIT=15]-->
-    <string name="event_info_reminders_label">Reminders</string>
+    <string name="event_info_reminders_label">提醒</string>
 
     <!-- Agenda View strings -->
     <skip/>
     <!-- This is shown as part of the heading at the top of a list of today's events. -->
-    <string name="agenda_today">TODAY, <xliff:g id="date">%1$s</xliff:g></string>
+    <string name="agenda_today">今天, <xliff:g id="date">%1$s</xliff:g></string>
     <!-- This is shown as part of the heading at the top of a list of today's events. -->
-    <string name="agenda_yesterday">YESTERDAY, <xliff:g id="date">%1$s</xliff:g></string>
+    <string name="agenda_yesterday">昨天, <xliff:g id="date">%1$s</xliff:g></string>
     <!-- This is shown as part of the heading at the top of a list of today's events. -->
-    <string name="agenda_tomorrow">TOMORROW, <xliff:g id="date">%1$s</xliff:g></string>
+    <string name="agenda_tomorrow">明天, <xliff:g id="date">%1$s</xliff:g></string>
     <!-- This is shown while the calendar events are being loading to the screen. -->
-    <string name="loading">Loading\u2026</string>
+    <!-- 当日历事件正在加载到屏幕时显示. -->
+    <string name="loading">加载中\u2026</string>
     <!-- This is shown at the top of the agenda view showing the beginning of the searched range. If the user taps on this string and Calendar will find events older than what is visible and display them to the user -->
     <string name="show_older_events">Touch to view events before <xliff:g id="oldest_search_range">%1$s</xliff:g></string>
     <!-- This is shown at the bottom of the agenda view showing the end of the searched range. If the user taps on this string and Calendar will find events later/newer than what is visible and display them to the user -->
